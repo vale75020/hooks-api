@@ -20,6 +20,20 @@ li {
   min-width: 300px;
   border: 1px solid lightblue;
 }
-h2 {
+.post-titles {
   color: lightskyblue
+}
+
+.post {
+  background-color: lightskyblue;
+  color: "black";
+  width: 80%;
+  min-width: 300px;
+  border: 1px solid black;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+#post-title {
+  color:"black"
 }

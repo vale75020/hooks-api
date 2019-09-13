@@ -4,6 +4,7 @@ import axios from "axios";
 const DataFetching = () => {
   const [posts, setPosts] = useState([]);
 
+  // fetching all the posts
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
@@ -15,12 +16,13 @@ const DataFetching = () => {
         console.log(err);
       });
   }, []); // [] to fetch only one time
+
   return (
     <div>
       <div>
         {posts.map(post => (
           <li key={post.id}>
-            <h2>{post.title}</h2>
+            <h2 className="post-titles">{post.title}</h2>
             <p>{post.body}</p>
           </li>
         ))}
