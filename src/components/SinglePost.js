@@ -10,7 +10,7 @@ const SinglePost = () => {
   // fetching a post by id
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .get(`https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`)
       .then(res => {
         console.log(res);
         setPost(res.data);

@@ -10,7 +10,7 @@ const SinglePostByUser = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+      .get(`https://jsonplaceholder.typicode.com/posts?userId=${userIdFromButtonClick}`)
       .then(res => {
         console.log(res);
         setPostsByUserId(res.data);
