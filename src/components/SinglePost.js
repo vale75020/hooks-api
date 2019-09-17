@@ -18,7 +18,7 @@ const SinglePost = () => {
       .catch(err => {
         console.log(err);
       });
-  }, [idFromButtonClick]);
+  },[idFromButtonClick]);
 
   const handleClick = () => {
     setIdFromButtonClick(id)
@@ -33,13 +33,14 @@ const SinglePost = () => {
   
   return (
     <div className="post">
-        <h3>Search a post by ID</h3>
+        <h2>Search a post by ID</h2>
       <input type="text" value={id} onChange={e => setId(e.target.value)} />
       <button type="button" onClick={handleClick}>Fetch Post</button>
       {(toggle && id!=="") ? <div className="container">
         <h2 id="post-title">{post.title}</h2>
         <p>{post.body}</p>
-        <button onClick={deletePost}>Delete</button>
+        <button className="delete" onClick={deletePost}>Delete</button>
+        <br /><br />
       </div>
       : null}
     </div>
