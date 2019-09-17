@@ -4,7 +4,7 @@ import axios from "axios";
 const SinglePost = () => {
   const [post, setPost] = useState({});
   const [id, setId] = useState("");
-  const [idFromBottonClick, setIdFromBottonClick] = useState(1)
+  const [idFromButtonClick, setIdFromButtonClick] = useState(1)
   const [toggle, setToggle] = useState(false)
 
   // fetching a post by id
@@ -18,10 +18,10 @@ const SinglePost = () => {
       .catch(err => {
         console.log(err);
       });
-  }, [idFromBottonClick]);
+  }, [idFromButtonClick]);
 
   const handleClick = () => {
-    setIdFromBottonClick(id)
+    setIdFromButtonClick(id)
     setToggle(true)
     console.log("id", id)
   }
@@ -32,11 +32,11 @@ const SinglePost = () => {
   }
   
   return (
-    <div>
-        <h3>Search a post by id</h3>
+    <div className="post">
+        <h3>Search a post by ID</h3>
       <input type="text" value={id} onChange={e => setId(e.target.value)} />
       <button type="button" onClick={handleClick}>Fetch Post</button>
-      {(toggle && id!=="") ? <div className="post">
+      {(toggle && id!=="") ? <div className="container">
         <h2 id="post-title">{post.title}</h2>
         <p>{post.body}</p>
         <button onClick={deletePost}>Delete</button>
